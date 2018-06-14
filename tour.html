@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>19区360全景</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, viewport-fit=cover"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="IE=edge"/>
+    <link rel="stylesheet" href="dist/plug/perfect-scrollbar.css">
+    <link rel="stylesheet" href="dist/css/nineteen-area.css">
+</head>
+<body>
+<div class="wrap">
+    <div class="container">
+        <div id="view">
+            <noscript>
+                <table class="view-error">
+                    <tr style="vertical-align:middle;">
+                        <td>
+                            <div style="text-align:center;">ERROR:<br/><br/>Javascript not activated<br/><br/></div>
+                        </td>
+                    </tr>
+                </table>
+            </noscript>
+        </div>
+        <!--<div class="design-info">-->
+        <!--<label class="images"><img src="dist/images/head.png"></label>-->
+        <!--<label class="intro">-->
+        <!--<span class="name">徐继强<a href="javascript:;">联系设计师</a></span>-->
+        <!--<span class="company">重庆十九地带科技有限公司</span>-->
+        <!--</label>-->
+        <!--</div>-->
+    </div>
+    <!--<div class="shop-info-box animated-left" id="shopBox">-->
+    <!--<div class="shop-tab-box">-->
+    <!--<ul class="tab-menu clearfix">-->
+    <!--<li class="fl"><a class="active" href="#pp">品牌商品</a></li>-->
+    <!--<li class="fr"><a href="#qt">其他商品</a></li>-->
+    <!--</ul>-->
+    <!--<div class="tab-cont">-->
+    <!--<div class="item active" id="pp">-->
+    <!--<div class="content">-->
+    <!--<ul>-->
+    <!--<li>-->
+    <!--<label><img src="dist/images/shop1.jpg"></label>-->
+    <!--<span>品牌商品-深色玻璃格子移门1</span>-->
+    <!--</li>-->
+    <!--<li>-->
+    <!--<label><img src="dist/images/shop2.jpg"></label>-->
+    <!--<span>品牌商品-深色玻璃格子移门2深色玻璃格子移门2</span>-->
+    <!--</li>-->
+    <!--<li>-->
+    <!--<label><img src="dist/images/shop3.jpg"></label>-->
+    <!--<span>品牌商品-深色玻璃格子移门3</span>-->
+    <!--</li>-->
+    <!--<li>-->
+    <!--<label><img src="dist/images/shop4.jpg"></label>-->
+    <!--<span>品牌商品-深色玻璃格子移门4</span>-->
+    <!--</li>-->
+    <!--<li>-->
+    <!--<label><img src="dist/images/shop1.jpg"></label>-->
+    <!--<span>品牌商品-深色玻璃格子移门1</span>-->
+    <!--</li>-->
+    <!--</ul>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="item" id="qt">-->
+    <!--<div class="content">-->
+    <!--<ul>-->
+    <!--<li>-->
+    <!--<label><img src="dist/images/shop4.jpg"></label>-->
+    <!--<span>其他商品-深色玻璃格子移门4</span>-->
+    <!--</li>-->
+    <!--<li>-->
+    <!--<label><img src="dist/images/shop3.jpg"></label>-->
+    <!--<span>其他商品-深色玻璃格子移门3</span>-->
+    <!--</li>-->
+    <!--<li>-->
+    <!--<label><img src="dist/images/shop2.jpg"></label>-->
+    <!--<span>其他商品-深色玻璃格子移门2深色玻璃格子移门2</span>-->
+    <!--</li>-->
+    <!--<li>-->
+    <!--<label><img src="dist/images/shop1.jpg"></label>-->
+    <!--<span>其他商品-深色玻璃格子移门1</span>-->
+    <!--</li>-->
+    <!--<li>-->
+    <!--<label><img src="dist/images/shop4.jpg"></label>-->
+    <!--<span>其他商品-深色玻璃格子移门4</span>-->
+    <!--</li>-->
+    <!--<li>-->
+    <!--<label><img src="dist/images/shop3.jpg"></label>-->
+    <!--<span>其他商品-深色玻璃格子移门3</span>-->
+    <!--</li>-->
+    <!--<li>-->
+    <!--<label><img src="dist/images/shop2.jpg"></label>-->
+    <!--<span>其他商品-深色玻璃格子移门2深色玻璃格子移门2</span>-->
+    <!--</li>-->
+    <!--</ul>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<audio autoplay id="audio" src="https://19desginerotherfilebucket-1253586543.cosgz.myqcloud.com/panoTour/base/sound/bg_0.mp3" ></audio>-->
+</div>
+
+<script src="tour.js"></script>
+<script src="dist/js/jquery-1.11.1.min.js"></script>
+<script src="dist/plug/jquery.mousewheel.js"></script>
+<script src="dist/plug/perfect-scrollbar.js"></script>
+<!--<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>-->
+<!--<script type="text/javascript">-->
+<!--var media = document.getElementById("audio");-->
+<!--wx.config({-->
+<!--// 配置信息-->
+<!--});-->
+<!--wx.ready(function () {-->
+<!--media.play();-->
+<!--});-->
+<!--</script>-->
+<script>
+    embedpano({
+        swf: "tour.swf",
+        xml: "tour.xml",
+        target: "view",
+        html5: "auto",
+        mobilescale: 1.0,
+        passQueryParameters: true,
+        consolelog: true
+    });
+
+    function showDiskBox(ele) {
+        $(ele).toggleClass("active");
+        var $pp = $("#pp");
+        if ($(ele).hasClass("active")) {
+            if ($(window).width() >= 640) {
+                $pp.perfectScrollbar();
+            } else {
+                $pp.find("ul").width($pp.find("li").length * (120 + 10));
+                $pp.perfectScrollbar({hasScrollBar: false});
+            }
+        }
+    }
+
+    function hideDiskBox(ele) {
+        $(ele).removeClass("active");
+    }
+
+    function tabChange(_this, ele) {
+        var id = ele;
+        $(_this).addClass("active").parents("li").siblings().find("a").removeClass("active");
+        $(id).addClass("active").siblings().removeClass("active");
+        if (!$(id).hasClass("ps-container")) {
+            if ($(window).width() >= 640) {
+                $(id).perfectScrollbar();
+            } else {
+                $(id).find("ul").width($(id).find("li").length * (120 + 10));
+                $(id).perfectScrollbar({hasScrollBar: false});
+            }
+        } else {
+            if ($(window).width() >= 640) {
+                $(id).perfectScrollbar("update");
+            } else {
+                $(id).find("ul").width($(id).find("li").length * (120 + 10));
+                $(id).perfectScrollbar("update");
+            }
+        }
+    }
+
+</script>
+</body>
+</html>

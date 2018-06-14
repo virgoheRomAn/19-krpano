@@ -1,0 +1,182 @@
+﻿<krpano version="1.19" title="十九区 · VR技术">
+    <include url="skin/vtourskin.xml?a=1"/>
+
+    <action name="startup" autorun="onstart">
+        if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
+        loadscene(get(startscene), null, MERGE);
+        playsound(bgsnd, 'https://19desginerotherfilebucket-1253586543.cosgz.myqcloud.com/panoTour/base/sound/bg_0.mp3',
+        0);
+        detection_device();
+        if(startactions !== null, startactions() );
+    </action>
+
+    <!-- LOGO 浏览量 -->
+    <layer name="nineteen_header_bar" keep="true" type="container" align="lefttop" x="10" y="10" width="100%">
+        <!-- LOGO -->
+        <layer name="nineteen_logo_box" keep="true" type="container" align="lefttop" bgcapture="false" x="0" y="0">
+            <layer name="nineteen_logo_image" keep="true" type="image" url="./dist/images/logo.png"/>
+            <layer name="nineteen_logo_text" keep="true" type="text" html="十九区" bgalpha="0.0" x="47" alpha="0.5"
+                   css="height:42px; line-height:42px; font-size:16px; color:#ffffff;"/>
+        </layer>
+        <!-- 浏览量 -->
+        <layer name="nineteen_see_box" devices="mobile|touch" keep="true" type="container" align="center" bgcapture="false" x="0" y="13" width="105" height="24px">
+            <layer name="nineteen_see_image" keep="true" type="image" url="./dist/images/icon.png" align="left" x="0" y="-1"
+                   crop="10|200|18|11"/>
+            <layer name="nineteen_see_text" keep="true" type="text" html="人气：2666667" bgalpha="0.0" x="23" y="0"
+                   alpha="0.5" align="left"
+                   css="height:20px; line-height:20px; font-size:12px; color:#ffffff;"/>
+        </layer>
+    </layer>
+
+
+    <!-- 手机浏览二维码 -->
+    <layer name="nineteen_phone_ewm" type="container" keep="true" width="160" height="160" bgalpha="0" bgcapture="false" align="rightbottom" x="65" y="126" visible="false" devices="desktop">
+        <layer name="nineteen_ewm_img" type="text" bgalpha="0" html="data:ewm_html"/>
+    </layer>
+
+    <data name="ewm_html">
+        [div class="phone_ewm"]
+        [i class="arrow_bottom"][/i]
+        [label][img src="./dist/images/ewm.png"][/img][/label]
+        [/div]
+    </data>
+
+    <!-- 设计师 -->
+    <layer name="nineteen_design_box" keep="true" type="container" bgcapture="false"
+           width="get:skin_settings:design_box_width" height="90" x="30" y="20" align="leftbottom">
+        <layer name="nineteen_design_cont" devices="desktop" bgalpha="0" type="text" align="left" html="data:design_html"/>
+        <layer name="nineteen_design_cont_mobile" devices="mobile|touch" bgalpha="0" type="text" align="left" x="-15" y="30" html="data:design_html_mobile"/>
+    </layer>
+
+    <data name="design_html">
+        [div class="design_info"]
+            [label class="images"][img src="./dist/images/head.png"][/img][/label]
+            [label class="intro"]
+                [span class="name"]徐继强[/span]
+                [span class="company"]重庆十九地带科技有限公司[/span]
+                [span class="see_number"][i class="see_icon"][/i]人气：[em]26667[/em][/span]
+            [/label]
+        [/div]
+    </data>
+
+    <data name="design_html_mobile">
+        [div class="design_info"]
+            [label class="images"][img src="./dist/images/head.png"][/img][/label]
+            [label class="intro"]
+                [span class="name"]徐继强[/span]
+                [span class="company"]重庆十九地带科技有限公司[/span]
+            [/label]
+        [/div]
+    </data>
+
+
+    <!-- 商品列表 -->
+    <layer name="nineteen_shop_box" keep="true" type="container" align="lefttop" bgcapture="false" width="240"
+           height="100%" x="-240">
+        <layer name="nineteen_shop_cont" type="text" bgalpha="0" align="lefttop" width="100%" height="100%"
+               html="data:shop_html"/>
+    </layer>
+
+    <data name="shop_html">
+        [div class="shop_info_box animated_left" id="shopBox"]
+            [div class="shop_tab_box"]
+                [ul class="tab_menu clearfix"]
+                    [li class="fl"][a class="active" href="javascript:;" onclick="tabChange(this,'#pp')"]品牌商品[/a][/li]
+                    [li class="fr"][a class="" href="javascript:;" onclick="tabChange(this,'#qt')"]其他商品[/a][/li]
+                [/ul]
+                [div class="tab_cont"]
+                    [div class="item active" id="pp"]
+                        [div class="content"]
+                            [ul]
+                                [li]
+                                    [label][img src="./dist/images/shop1.jpg"][/img][/label]
+                                    [span]品牌商品-深色玻璃格子移门1[/span]
+                                [/li]
+                                [li]
+                                    [label][img src="./dist/images/shop2.jpg"][/img][/label]
+                                    [span]品牌商品-深色玻璃格子移门2深色玻璃格子移门2[/span]
+                                [/li]
+                                [li]
+                                    [label][img src="./dist/images/shop3.jpg"][/img][/label]
+                                    [span]品牌商品-深色玻璃格子移门3[/span]
+                                [/li]
+                                [li]
+                                    [label][img src="./dist/images/shop4.jpg"][/img][/label]
+                                    [span]品牌商品-深色玻璃格子移门4[/span]
+                                [/li]
+                                [li]
+                                    [label][img src="./dist/images/shop1.jpg"][/img][/label]
+                                    [span]品牌商品-深色玻璃格子移门1[/span]
+                                [/li]
+                            [/ul]
+                        [/div]
+                    [/div]
+
+                    [div class="item" id="qt"]
+                        [div class="content"]
+                            [ul]
+                                [li]
+                                    [label][img src="./dist/images/shop4.jpg"][/img][/label]
+                                    [span]其他商品-深色玻璃格子移门4[/span]
+                                [/li]
+                                [li]
+                                    [label][img src="./dist/images/shop3.jpg"][/img][/label]
+                                    [span]其他商品-深色玻璃格子移门3深色玻璃格子移门3[/span]
+                                [/li]
+                                [li]
+                                    [label][img src="./dist/images/shop2.jpg"][/img][/label]
+                                    [span]其他商品-深色玻璃格子移门2[/span]
+                                [/li]
+                                [li]
+                                    [label][img src="./dist/images/shop1.jpg"][/img][/label]
+                                    [span]其他商品-深色玻璃格子移门1[/span]
+                                [/li]
+                                [li]
+                                    [label][img src="./dist/images/shop4.jpg"][/img][/label]
+                                    [span]其他商品-深色玻璃格子移门4[/span]
+                                [/li]
+                                [li]
+                                    [label][img src="./dist/images/shop3.jpg"][/img][/label]
+                                    [span]其他商品-深色玻璃格子移门3[/span]
+                                [/li]
+                            [/ul]
+                        [/div]
+                    [/div]
+
+                [/div]
+            [/div]
+        [/div]
+    </data>
+
+    <!-- 场景 -->
+    <scene name="scene_1" title="客厅客厅客厅客厅客厅客厅客厅客厅客厅" onstart="" thumburl="panos/1.tiles/thumb.jpg" lat="" lng=""
+           heading="">
+        <view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140"
+              limitview="auto"/>
+        <preview url="panos/1.tiles/preview.jpg"/>
+        <image>
+            <cube url="panos/1.tiles/pano_%s.jpg"/>
+        </image>
+        <hotspot name="spot_1" tooltip="卧室" url="./dist/images/arrow2.png" onloaded="do_crop_animation(48,70, 15);" onhover="showtext(卧室, room_tooltip_style);" onclick="skin_loadscene('scene_2')" ath="0" atv="0"/>
+    </scene>
+
+    <scene name="scene_2" title="卧室" onstart="" thumburl="panos/2.tiles/thumb.jpg" lat="" lng="" heading="">
+        <view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140"
+              limitview="auto"/>
+        <preview url="panos/2.tiles/preview.jpg"/>
+        <image>
+            <cube url="panos/2.tiles/pano_%s.jpg"/>
+        </image>
+        <hotspot name="spot_2" tooltip="厨房" url="./dist/images/arrow2.png" onloaded="do_crop_animation(48,70, 15);" onhover="showtext(厨房, room_tooltip_style);" onclick="skin_loadscene('scene_3')" ath="0" atv="0"/>
+    </scene>
+
+    <scene name="scene_3" title="厨房" onstart="" thumburl="panos/3.tiles/thumb.jpg" lat="" lng="" heading="">
+        <view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140"
+              limitview="auto"/>
+        <preview url="panos/3.tiles/preview.jpg"/>
+        <image>
+            <cube url="panos/3.tiles/pano_%s.jpg"/>
+        </image>
+        <hotspot name="spot_3" tooltip="客厅" url="./dist/images/arrow2.png" onloaded="do_crop_animation(48,70, 15);" onhover="showtext(客厅, room_tooltip_style);" onclick="skin_loadscene('scene_1')" ath="0" atv="0"/>
+    </scene>
+</krpano>

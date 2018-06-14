@@ -1,0 +1,476 @@
+//krpano-全景漫游xml-API
+
+//默认参数
+<skin_settings maps="false"
+   maps_type="google"
+   maps_bing_api_key=""
+   maps_google_api_key=""
+   maps_zoombuttons="false"
+   gyro="true"
+   webvr="true"
+   webvr_gyro_keeplookingdirection="false"
+   webvr_prev_next_hotspots="true"
+   littleplanetintro="false"
+   title="false"
+   thumbs="true"
+   thumbs_width="120" thumbs_height="80" thumbs_padding="10" thumbs_crop="0|40|240|160"
+   thumbs_opened="false"
+   thumbs_text="false"
+   thumbs_dragging="true"
+   thumbs_onhoverscrolling="false"
+   thumbs_scrollbuttons="false"
+   thumbs_scrollindicator="false"
+   thumbs_loop="false"
+   tooltips_buttons="false"
+   tooltips_thumbs="false"
+   tooltips_hotspots="false"
+   tooltips_mapspots="false"
+   deeplinking="false"
+   loadscene_flags="MERGE"
+   loadscene_blend="OPENBLEND(0.5, 0.0, 0.75, 0.05, linear)"
+   loadscene_blend_prev="SLIDEBLEND(0.5, 180, 0.75, linear)"
+   loadscene_blend_next="SLIDEBLEND(0.5,   0, 0.75, linear)"
+   loadingtext="加载中..."
+   layout_width="60%"
+   layout_maxwidth="814"
+   controlbar_width="-24"
+   controlbar_height="90"
+   controlbar_offset="20"
+   controlbar_offset_closed="-40"
+   controlbar_overlap.no-fractionalscaling="10"
+   controlbar_overlap.fractionalscaling="0"
+   design_skin_images="dist/images/icon.png"
+   design_bgcolor="0x2D3E50"
+   design_bgalpha="0.8"
+   design_bgborder="0"
+   design_bgroundedge="1"
+   design_thumbborder_bgroundedge="0"
+   design_text_css="color:#FFFFFF; font-family:Arial;"
+   design_text_shadow="1"
+/>
+
+
+maps="false"  <!-- 是否使用必应地图或谷歌地图 ->
+maps_type="bing"  <!-- 选择使用谷歌地图或必应地图 ->
+maps_bing_api_key=""   <!-- 必应地图所需的API密钥，需申请 ->
+maps_google_api_key=""   <!-- 谷歌地图所需的API密钥，需申请 ->
+maps_zoombuttons="false"   <!-- 是否在地图上显示缩放按钮 ->
+gyro="true"   <!-- 是否使用陀螺仪 ->
+webvr="true"    <!-- 是否启用VR ->
+webvr_gyro_keeplookingdirection="false" <!-- 进入陀螺仪或VR时是否保持观看方向 ->
+webvr_prev_next_hotspots="true"  <!-- 在VR下是否启用导航到前后场景的链接热点->
+littleplanetintro="false"    <!-- 是否使用小行星开场 ->
+title="true"  <!-- 是否左下角显示title ->
+thumbs="true"  <!-- 是否使用缩略图，如不使用，则没有缩略图一栏 ->
+thumbs_width="120" thumbs_height="80" thumbs_padding="10" thumbs_crop="0|40|240|160"  <!-- 缩略图宽度、高度、间距以及缩略图裁切范围 ->
+thumbs_opened="false"   <!-- 是否在启动时弹出缩略图一栏 ->
+thumbs_text="false"  <!-- 是否在缩略图上显示名字 ->
+thumbs_dragging="true"   <!-- 是否允许鼠标拖拽缩略图区域 ->
+thumbs_onhoverscrolling="false"  <!-- 是否允许鼠标悬停缩略图自动滚动 ->
+thumbs_scrollbuttons="false"   <!-- 是否显示缩略图滚动按钮 ->
+thumbs_scrollindicator="false"   <!-- 是否显示缩略图滚动条 ->
+thumbs_loop="false"  <!-- 滚动按钮是否使用缩略图循环 ->
+tooltips_buttons="false" <!-- 鼠标在按钮悬停时是否弹出文字提示 ->
+tooltips_thumbs="false"  <!-- 鼠标在缩略图悬停时是否弹出文字提示 ->
+tooltips_hotspots="false"   <!-- 鼠标在热点上悬停时是否弹出文字提示 ->
+tooltips_mapspots="false"   <!-- 鼠标在地图热点悬停时是否弹出文字提示 ->
+deeplinking="false"       <!-- 是否使用深度链接获取功能，可使得当前页面路径获取场景及视角信息 ->
+loadscene_flags="MERGE"  <!-- 缩略图切换场景时的变量 ->
+loadscene_blend="OPENBLEND(0.5, 0.0, 0.75, 0.05, linear)"  <!-- 缩略图切换场景时的融合 ->
+loadscene_blend_prev="SLIDEBLEND(0.5, 180, 0.75, linear)"  <!-- 缩略图切换到上一个场景时的融合 ->
+loadscene_blend_next="SLIDEBLEND(0.5, 0, 0.75, linear)"  <!-- 缩略图切换到下一个场景时的融合 ->
+loadingtext="载入中..." <!-- 在全景图载入中时显示的文字 ->
+layout_width="100%"  <!--导航条容器相对屏幕宽度的百分比 ->
+layout_maxwidth="814"  <!--导航条容器的最大宽度像素 ->
+controlbar_width="-24" <!--导航条背景的宽度像素 ->
+controlbar_height="40"  <!--导航条背景的高度像素 ->
+controlbar_offset.normal="20"  <!--导航条背景与屏幕底部的距离->
+controlbar_offset_closed="-40"  <!--导航条隐藏状态时与屏幕底部的距离->
+controlbar_overlap.no-fractionalscaling="10"  <!--在不支持分级缩放页面和设置像素比的设备的导航条重叠的像素->
+controlbar_overlap.fractionalscaling="0" <!--支持分级缩放页面和设置像素比的设备的导航条重叠的像素->
+design_skin_images="vtourskin.png" <!--皮肤所用的源图片->
+design_bgcolor="0x000000" <!--皮肤的背景颜色->
+design_bgalpha="0.5" <!--皮肤的透明度->
+design_bgborder="0 0xFFFFFF 1.0" <!--皮肤的边框->
+design_bgroundedge="1" <!--皮肤边框圆角设置->
+design_bgshadow="0 0 9 0xFFFFFF 0.5" <!--皮肤的背景阴影->
+design_thumbborder_bgborder="4 0xFFFFFF 1.0" <!--皮肤的缩略图边框->
+design_thumbborder_padding="2" <!--皮肤缩略图边框间距->
+design_thumbborder_bgroundedge="5" <!--皮肤缩略图边框的圆角->
+design_text_css="color:#FFFFFF; font-family:Arial; font-weight:bold;"<!--皮肤文字样式->
+design_text_shadow="1" <!--皮肤的文字阴影->
+
+
+jscall(calc('console.log("krpano版本：'+version+'")'))
+
+
+https://vr720.ideamake.cn/res/af837b10?shareid=586526c0&prjcode=wkjj132&code=001FzGr40pyFLD15Hcs40lVJr40FzGrI&visitor_source=1&parent_uuid=47ddc770
+
+//音乐地址
+https://19desginerotherfilebucket-1253586543.cosgz.myqcloud.com/panoTour/base/sound/bg_0.mp3
+
+注册码：
+/home/krpano/krpano-1.19-pr10/krpanotools register -FXsqTqaGNSZER5dSETEm+VzQEh9sWSa5DZMFsSmMxYV9GcXs8W3R8A/mWXrGNUceXvrihmh28hfRF1ivrW0HMzEychPvNiD8B/4/ZzDaUE9Rh6Ig22aKJGDbja1/kYIqmc/VKfItRE2RTSOIbIroxOtsz626NIpxWksAAifwhpNwuPXqDQpz2sRUMBzoPqZktpkItoSenN2mKd8Klfx7pOuB6CIK3e1CDXgyndqOt2mWybLZcU/wfJVAecfxk15ghiqrzaDsbqrdABDowg==
+
+
+
+devices 属性可以在全部标签中设置使用，指定标签在指定的设备时才生效  
+  
+o   all - use this element on all devices (the default)  
+o   flash - use this element only in the krpano Flash viewer  
+o   html5 - use this element only in the krpano HTML5 viewer  
+o   desktop - use this element only on Desktop  
+o   mobile - use this element only on Mobiles  
+o   tablet - use this element only on Tablets  
+o   css3d - use this element only when CSS-3D-Transforms are available (HTML5 only)  
+o   webgl - use this element only when WebGL is available (HTML5 only)  
+o   fullscreensupport - use this element only when the Fullscreen mode is support  
+o   touchdevice - use this element only on Touch devices  
+o   gesturedevice - use this element only on Gesture (Multi-Touch) devices  
+o   ios - use this element only on iOS devices (iPhone, iPod, iPad)  
+o   ios### - use this element only when the iOS version is higher than ###  
+o   iphone - use this element only on the iPhone (and iPod Touch)  
+o   ipod - use this element only on the iPod Touch  
+o   ipad - use this element only on the iPad  
+o   retina - use this element only on iOS retina displays  
+o   android - use this element only on Android devices  
+o   androidstock - use this element only in the 'stock' (=WebView-based) Android browser  
+o   blackberry - use this element only on BlackBerry devices  
+o   chrome - use this element only in the Chrome browser (HTML5 only)  
+o   firefox - use this element only in the Firefox browser (HTML5 only)  
+o   ie - use this element only in the Internet Explorer browser (HTML5 only)  
+o   safari - use this element only in the Safari browser (HTML5 only)  
+o   opera - use this element only in the (Presto-based) Opera browser (HTML5 only)  
+o   air - use this element only in the Adobe AIR Player  
+o   standalone - use this element only in the Standalone Flashplayer  
+o   windows - use this element only on Windows systems  
+o   mac - use this element only on Mac OSX systems  
+o   linux - use this element only on Linux systems  
+
+一般热点：
+
+<hotspot name="..."              定义热点名称
+         type="image"            定义热点类型，只能是image
+         url="..."               热点图像路径，支持SWF, JPG, PNG, GIF
+         alturl="..."            html5状态下显示的图像路径
+         keep="false"            是否在下一场景跳转后保持显示
+         devices="all"           支持设备类型
+         visible="true"          是否可见
+         enabled="true"          设置热点是否接收鼠标事件
+         handcursor="true"       设置是否鼠标移到上面显示小手
+         maskchildren="false"    设置是否将子控件变成蒙板
+         zorder=""               插入元素的次序索引，可以是字符也可以是数字，html5输出必须是0-100整数
+         zorder2="0.0"           设置为0.0和1.0，分别对应当前热点在扭曲控件之下和之上
+         capture="true"          与enabled配合使用，都为true只对热点传递动作，capture="false"可对子控件传递动作
+         children="true"         设置子控件是否接收热点鼠标事件
+         blendmode="normal"      设置混合模式，可选：normal, layer, screen, add, subtract, difference, multiply, overlay, lighten, darken, hardlight, invert.
+
+         style=""                读入已设置好的style名称
+         ath="0.0" atv="0.0"     设定将场景缩略图为球形热点
+         edge="center"           热点的边界对齐点
+         ox="0"                  边界到对齐点的偏移量
+         oy="0"                  
+         zoom="false"            设置是否场景缩放时，热点跟随缩放
+         distorted="false" rx="0.0" ry="0.0" rz="0.0"    设置热点是否跟随场景进行3D扭曲
+         details="8"              热点显示的细节数量，默认为8
+         inverserotation="false"  设置是否逆向旋转3D扭曲
+         flying="0.0"             设置ath/atv/scale的插值 
+         width="" height=""       设置热点宽高
+         scale="1.0"              设置热点缩放
+         rotate="0.0"             设置热点旋转角度
+         pixelhittest="false"     是否启动精确像素测试
+         smoothing="true"         设置缩放时，是否平滑化处理
+         accuracy="0"             设置像素渲染值（flash下）
+         accuracy2="1"            设置精度控制（html5下）
+         alpha="1.0"              设置透明度
+         autoalpha="false"        设置是否自动变更透明度
+         usecontentsize="false"   是否使用用户指定flash大小，默认false原始大小
+         scale9grid=""            定义是否支持矢量缩放，scale9grid="x-position|y-position|width|height|prescale*"
+         crop=""                  定义元素坐标及宽高  crop="x-position|y-position|width|height"
+         onovercrop=""          设置元素鼠标移到上方后的坐标及宽高
+         ondowncrop=""          设置元素鼠标按下状态后的坐标及宽高
+         scalechildren="false"   子元素是否跟随缩放
+         mask=""                 mask="name"  mask="layer[name]"  mask="hotspot[name]"
+         effect=""                热点位图效果3种：glow(color,alpha,range,strength);
+                                  dropshadow(depth,angle,color,range,strength);
+                                  blur(radius);
+
+         onover=""               鼠标在经过上方时执行动作
+         onhover=""              鼠标停在上方时执行动作
+         onout=""                鼠标停移出范围时时执行动作
+         onclick=""              鼠标停点击时执行动作
+         ondown=""               鼠标按下时执行动作
+         onup=""                 鼠标按键松开时执行动作
+         onloaded=""             加载元素完成后执行动作
+         />
+
+
+
+		 
+		 1. layer name="..." 
+		 2. type="image" 
+		 3. url="..." 
+		 4. alturl="" 
+		 5. keep="false" 
+		 6. devices="all" 
+		 7. parent="" 
+		 8. visible="true" 
+		 9. enabled="true" 
+		 10. handcursor="true" 
+		 11. maskchildren="false" 
+		 12. scalechildren="false" 
+		 13. zorder="" 
+		 14. style="" 
+		 15. align="" 
+		 16. edge=""
+		 17. x="" 
+		 18. y="" 
+		 19. rotate="0.0" 
+		 20. width="" 
+		 21. height="" 
+		 22. scale="1.0" 
+		 23. alpha="1.0" 
+		 24. crop="" 
+		 25. onovercrop="" 
+		 26. ondowncrop="" 
+		 27. bgcolor="0x000000" 
+		 28. bgalpha="0.0" 
+		 29. bgcapture="false" 
+		 30. onover="" 
+		 31. onhover="" 
+		 32. onout="" 
+		 33. onclick="" 
+		 34. ondown="" 
+		 35. onup="" 
+		 36. onloaded=""
+		 
+ <plugin name="..."        定义引入的元素名称  
+       type="image"       引入元素的类型，可以为image 或 container，container为容器，可在容器内继续引入多个媒体元素  
+       url="..."          引入元素的路径（支持格式：SWF, JPG, PNG, GIF.）  
+       alturl=""          引入元素的路径（支持格式：SWF, JPG, PNG, GIF.），只在html5浏览器使用  
+       keep="false"       是否在跳入新场景时仍然保留显示该元素  
+       devices="all"      设置显示的设备类型（详见设备列表）  
+       parent=""          设置父容器名称，可以直接是 plugin的name,也可以是全称：parent="layer[name]"或parent="hotspot[name]"  
+       visible="true"     设置插入元素是否可见  
+       enabled="true"     设置插入元素是否接受鼠标事件  
+       handcursor="true"  鼠标移动该元素上时，是否变为小手  
+       maskchildren="false"  设置是否将子控件变为蒙板，设置为TRUE后，除子控件范围显示外，子控件边框与父控件边框之间区域将不显示  
+       scalechildren="false" 设置是否子空间跟随父控件一同缩放  
+       zorder=""              插入元素的次序索引，可以是字符也可以是数字，html5输出必须是0-100整数  
+       style=""               调用已在文件中定义好的style的名称  
+       align=""               元素在屏幕对齐方式，lefttop, left, leftbottom, top, center, bottom, righttop, right, rightbottom （见示意图）  
+       edge=""                元素的边缘或描点层对齐方式，lefttop, left, leftbottom, top, center, bottom, righttop, right, rightbottom （见示意图）  
+       x=""                   对齐边界到对齐点的X横向距离  
+       y=""                   对齐边界到对齐点的y横向距离  
+       rotate="0.0"           插入元素显示时旋转度数  
+       width=""               插入元素的显示宽度  
+       height=""              插入元素的显示高度  
+       scale="1.0"            插入元素的缩放比例  
+       alpha="1.0"            插入元素的不透明度  
+       crop=""                定义元素坐标及宽高  crop="x-position|y-position|width|height"  
+       onovercrop=""          设置元素鼠标移到上方后的坐标及宽高  
+       ondowncrop=""          设置元素鼠标按下状态后的坐标及宽高  
+       bgcolor="0x000000"      type="container"状态下的背景颜色，非container状态下无效  
+       bgalpha="0.0"           背景不透明度  
+       bgcapture="false"       是否捕抓在背景容器上事件（type="container"状态下生效）  
+       onover=""               鼠标在经过上方时执行动作  
+       onhover=""              鼠标停在上方时执行动作  
+       onout=""                鼠标停移出范围时时执行动作  
+       onclick=""              鼠标停点击时执行动作  
+       ondown=""               鼠标按下时执行动作  
+       onup=""                 鼠标按键松开时执行动作  
+       onloaded=""             加载元素完成后执行动作  
+       />  
+	   
+	   
+		  logkey="true" showerrors="false" debugmode="true"
+		 
+赋值语句：set({variable},{value})
+获取语句：get({variable})
+交替真假：switch({variable})
+交替语句：switch({variable},{valueA},{valueB})
+补间语句：tween({variable},{destinationvalue},{time}*,{tweentype}*,{donecall}*)
+延时调用： delayedcall({delay},{actions})
+变量删除: delete(variable)
+变量复制: copy(destination, source)==set(destination,get(source) )
+判断语句：if({condition}, {then-actions}, {else-actions})
+显示文字：showtext({text},{textstyle}*)
+动作参数：copy(layer[radar].x,layer[%1].x);set(layer[radar].heading, %2);
+
+1. set(variable, value)
+2. get(variable)
+3. call(actioncode, callerobject*)
+4. trace(code, message)
+5. parsepath(path)
+6. loadFile(file, donecallback, errorcallback*)
+7. loadImage(fiel, donecallback, errorcallback*)
+8. screentosphere(x, y)
+9. spheretoscreen(v, h)
+
+两参数语法:
+◦add(dst,val1)  ⇒  dst = dst + val1 (like +=)
+◦sub(dst,val1)  ⇒  dst = dst - val1 (like -=)
+◦mul(dst,val1)  ⇒  dst = dst * val1 (like *=)
+◦div(dst,val1)  ⇒  dst = dst / val1 (like /=)
+◦mod(dst,val1)  ⇒  dst = dst % val1 (modulate)
+◦pow(dst,val1)  ⇒  dst = dst ^ val1
+三参数语法:
+◦add(dst,val1,val2)  ⇒  dst = val1 + val2
+◦sub(dst,val1,val2)  ⇒  dst = val1 - val2
+◦mul(dst,val1,val2)  ⇒  dst = val1 * val2
+◦div(dst,val1,val2)  ⇒  dst = val1 / val2
+◦mod(dst,val1,val2)  ⇒  dst = val1 % val2 (modulate)
+◦pow(dst,val1,val2)  ⇒  dst = val1 ^ val2
+自增加：
+inc(variable, byvalue*, max*, min*)
+自减少：
+dec(variable, byvalue*, min*, max*)
+
+inc(i);
+inc(frame,1,get(lastframe),0);
+inc(ypos,30);
+inc(view.hlookat, 2, 90, -90);
+截取字符获得新字符
+subtxt(dstvar, srcvar, startpos, len)
+subtxt(newvar, abcdefg, 2, 3)  ---->  newvar==bcd,  第二个开始截取，截取3字符
+
+
+%FIRSTXML% - 第一次载入XML文件的路径。
+%CURRENTXML% - 当前载入的主XML文件的路径（不是被包含的那们）。
+%SWFPATH% - krpano观看器文件的路径。
+%HTMLPATH% - HTML文件的路径。
+%BASEDIR% - 使用basedir路径。
+%$VARIABLE% - 使用指定的'VARIABLE' - 这可以是任意的krpano变量，但是必须在当前XML或场景载入之前定义它，例如在嵌入过程中（通过initvars）已经在HTML文件中了，或者在调用loadpano()、loadscene()之前。
+
+
+元素属性devices可以是一个或多个可用的设备。
+可以使用这些逻辑操作符来组合若干种设备：
+一个加号+或者字符串.and.可以用作AND操作符，以检查是否所有的设备设置项都是匹配的。
+一条竖线 | 字符或者字符串.or.可以用作OR操作符，以检查是否给定的设备设置项中有一项是匹配的。
+一个惊叹号 ! 字符或者在设备设置项前面的一个no-前缀可以用来检查给定的设备设置项是不是一个NOT集合。
+解决的次序：AND检查将会在OR检查之前被解决。
+注意 - 要想在动作代码中动态检查设备设置项，请使用device 对象，以及if()或calc()动作。
+
+
+
+Comparison operators:
+==	is equal (non-strict)
+!=	is not equal (non-strict)
+<  or  LT	is lower than *
+>  or  GT	is greater than *
+<=  or  LE	is lower or equal than *
+>=  or  GE	is greater or equal than *
+===	is equal (strict)
+!==	is not equal (strict)
+Logical operators:
+||  or  OR 	the left OR the right expression need to be true *
+&&  or  AND	the left AND the right expression need to be true *
+!	NOT operator - invert a boolean value
+Ternary operators:
+if ? then : else	Ternary operator
+Nesting operators:
+( ... )	Nesting operator
+Mathematical operators:
++	plus - add numbers or concatenate strings
+-	minus
+*	multiple
+/	divide
+^	power of
+Binary operators:
+<<  or  LSHT	left bit shift *
+>>  or  RSHT	right bit shift *
+BOR	bitwise OR
+BAND	bitwise AND
+XOR	bitwise XOR
+
+
+
+多边形热点
+
+
+<hotspot 
+	name="..."
+	keep="false"
+	visible="true"
+	enabled="true"
+	handcursor="true"
+	zorder=""
+	capture="true"
+	blendmode="normal"
+	style=""
+	alpha="1.0"
+	autoalpha="false"
+	fillcolor="0xFFFFFF" fillcolorhover="0xFFFFFF"   填充颜色及鼠标移上后颜色
+	fillalpha="0.0" fillalphahover="0.1"             填充颜色透明度及鼠标移上后颜色透明度
+	borderwidth="0.0" borderwidthhover="4.0"         边界宽度及鼠标移上后边界宽度
+	bordercolor="0xFFFFFF" bordercolorhover="0xFFFFFF"  边界颜色及边界鼠标移上后颜色
+	borderalpha="0.0" borderalphahover="0.8"           边界透明度及鼠标移上后边界透明度
+	fadeintime="0.15" fadeincurve="1.1"               悬停状态变化时间及形式
+	fadeouttime="0.3" fadeoutcurve="0.7"
+	onover=""
+	onhover=""
+	onout=""
+	onclick=""
+	ondown=""
+	onup=""
+>
+    <point ath="..." atv="..." />            多边形热点坐标
+    <point ath="..." atv="..." />
+    <point ath="..." atv="..." />
+    ...
+</hotspot>
+
+
+<events onenterfullscreen=""          切换到全屏显示执行    
+        onexitfullscreen=""           从全屏切换回普通视图时执行    
+        onxmlcomplete=""              XML文件加载完成时执行    
+        onpreviewcomplete=""          预览图加载完成时执行    
+        onloadcomplete=""             全景切片图片加载完毕时执行    
+        onnewpano=""                  当启动新的全景场景时执行    
+        onremovepano=""               当前场景被关闭时执行（加载新场景前）    
+        onnewscene=""                 新场景加载完成时执行    
+        onloaderror=""                加载错误时执行，执行被设置后，屏幕将不显示默认的错误信息    
+        onkeydown=""                  当某个键盘被按下时执行    
+        onkeyup=""                    当某个键盘松开时执行    
+        onclick=""                    当鼠标点击全景场景时执行    
+        onmousedown=""                当鼠标按下时执行    
+        onmouseup=""                  当鼠标松开时执行    
+        onmousewheel=""               当鼠标滚轮滚动时执行    
+        onidle=""                     当无用户操作在设定秒数后执行    
+        onviewchange=""               当场景转变时执行（渲染开始时）    
+        onviewchanged=""              当场景转变时执行（渲染完成时）    
+        onresize=""                   当浏览器大小改变时执行    
+        />    
+		
+		
+		
+		
+		
+		
+<textstyle name="..."                       定义样式名称  
+   font="Times"                     定义文字字体  
+   fontsize="12.0"                  定义文字大小  
+   bold="true"                      是否粗体  
+   italic="false"                   是否斜体  
+   background="true"                是否加载文字背景  
+   backgroundcolor="0xFFFFFF"       背景颜色  
+   border="true"                    是否加载边框  
+   bordercolor="0x000000"           边框颜色  
+   textcolor="0x000000"             文字颜色  
+   alpha="1.0"                      文字不透明度  
+   blendmode="normal"               选择混合模式： "normal", "add", "difference", "multiply", "screen"  
+   effect=""                        选择加载特效  
+									•glow(color,alpha,range,strength);  
+									•dropshadow(depth,angle,color,range,strength);  
+									•blur(radius);  
+
+   origin="cursor"                 文本原点位置 cursor(鼠标光标)，lefttop, left, leftbottom,top, center, bottom, righttop, right, rightbottom  
+   edge="bottom"                   底部阴影效果  
+   textalign="none"                文本对齐方式 none, left, center, right  
+   xoffset="0"                     文本原点位置X轴偏移量  
+   yoffset="-3"                    文本原点位置Y轴偏移量  
+   showtime="0.1"                  显示文本的时间  
+   fadetime="0.0"                  文本淡出显示时间  
+   fadeintime="0.0"                文本淡入显示时间  
+   noclip="true"                   是否避免文字超出屏幕边缘  
+   /> 
